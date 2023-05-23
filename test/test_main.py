@@ -4,9 +4,9 @@ import unittest  # for creating the test case
 import sys  # for adding the parent directory to the path
 from pathlib import Path  # for getting the path of the main.py file
 # add the parent directory to the path in order to run it from the run command in vscode
-MAIN_FILE_FOLDER = Path(__file__).parents[1].as_posix()
-sys.path.insert(1, MAIN_FILE_FOLDER)
-from main import is_valid, solve_sudoku  # nopep8 pylint: disable=wrong-import-position
+MAIN_FILE_FOLDER = Path(__file__).parents[1]
+sys.path.insert(1, str(MAIN_FILE_FOLDER))
+from main import is_valid, solve_sudoku  # nopep8 pylint: disable=wrong-import-position, import-error
 
 
 class TestSudoku(unittest.TestCase):

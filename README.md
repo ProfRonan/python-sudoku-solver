@@ -23,7 +23,7 @@ Para facilitar a implementação, assuma que `0` em uma célula representa uma c
 Também, assuma que o tabuleiro de Sudoku é uma lista de listas de inteiros.
 Ou seja, um tabuleiro de Sudoku é uma lista de 9 listas de 9 inteiros.
 
-Um exemplo de sudoku válido, mas ainda incompleto, é o seguinte:
+Um exemplo de Sudoku válido, mas ainda incompleto, é o seguinte:
 
 ```python
 sudoku_board = [
@@ -93,6 +93,20 @@ python test/test_main.py
 3. caso você esteja usando o [VSCode](https://code.visualstudio.com/), você pode abrir a paleta de comandos `CTRL+SHIFT+P` e digitar `Run All Tests`.
 
 4. no seu editor de código, você pode executar o arquivo `test_main.py` e verificar o resultado dos testes no terminal.
+
+## 👋 Envio do Trabalho 👋
+
+Para enviar o seu trabalho, basta fazer um **commit** e um **push** para o repositório do exercício.
+
+No terminal, você pode fazer isso executando os seguintes comandos:
+
+```bash
+git add .
+git commit -m "Entrega do exercício"
+git push
+```
+
+No [VSCode](https://code.visualstudio.com/), você pode fazer isso apertando `CTRL+SHIFT+G` para abrir o menu de controle de versão e utilizar a interface gráfica para fazer o **commit** e o **push/sync**.
 
 ## 🤖 Observações Importantes 🤖
 
