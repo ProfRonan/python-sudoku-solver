@@ -1,7 +1,7 @@
 """Testa o arquivo main.py"""
 
 import unittest  # para criar testes unitários
-from main import is_valid, solve_sudoku
+from main import is_valid, solve_sudoku, Board
 
 
 class TestSudoku(unittest.TestCase):
@@ -9,7 +9,7 @@ class TestSudoku(unittest.TestCase):
 
     def setUp(self):
         """Cria os tabuleiros para testar"""
-        self.boards = []
+        self.boards: list[dict[str, Board]] = []
 
         puzzle = [
             [5, 3, 0, 0, 7, 0, 0, 0, 0],

@@ -1,7 +1,9 @@
 """Arquivo principal do programa"""
 
+Board = list[list[int]]
 
-def solve_sudoku(board: list[list[int]]) -> list[list[int]]:
+
+def solve_sudoku(board: Board) -> Board:
     """
     Resolve um tabuleiro de sudoku.
     O tabuleiro deve ser uma lista de listas de inteiros.
@@ -13,7 +15,7 @@ def solve_sudoku(board: list[list[int]]) -> list[list[int]]:
     return board
 
 
-def is_valid(board: list[list[int]]) -> bool:
+def is_valid(board: Board) -> bool:
     """
     Checa se o tabuleiro é válido
     Um tabuleiro válido é um tabuleiro com 9 linhas, 9 colunas e 9 quadrantes.
