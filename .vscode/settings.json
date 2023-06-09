@@ -1,10 +1,12 @@
 {
-  "python.testing.unittestArgs": ["-v", "-s", "./test", "-p", "test*.py"],
-  "python.testing.pytestEnabled": false,
   "python.testing.unittestEnabled": true,
-  "cSpell.words": ["nopep", "subgrid", "sudoku"],
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.autopep8"
-  },
-  "python.formatting.provider": "none"
+  "pylint.args": [
+    "--disable",
+    "non-ascii-name",
+    "non-ascii-module-import"
+  ],
+  "cSpell.words": [
+    "subgrid",
+    "sudoku"
+  ]
 }

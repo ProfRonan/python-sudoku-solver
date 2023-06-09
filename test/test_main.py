@@ -1,19 +1,14 @@
-"""Test file for testing the functions in main.py file"""
+"""Testa o arquivo main.py"""
 
-import unittest  # for creating the test case
-import sys  # for adding the parent directory to the path
-from pathlib import Path  # for getting the path of the main.py file
-# add the parent directory to the path in order to run it from the run command in vscode
-MAIN_FILE_FOLDER = Path(__file__).parents[1]
-sys.path.insert(1, str(MAIN_FILE_FOLDER))
-from main import is_valid, solve_sudoku  # nopep8 pylint: disable=wrong-import-position, import-error
+import unittest  # para criar testes unitários
+from main import is_valid, solve_sudoku
 
 
 class TestSudoku(unittest.TestCase):
-    """Class for testing the main.py file"""
+    """Classe para testar o arquivo main.py"""
 
     def setUp(self):
-        """Set up the test case"""
+        """Cria os tabuleiros para testar"""
         self.boards = []
 
         puzzle = [
@@ -25,7 +20,7 @@ class TestSudoku(unittest.TestCase):
             [7, 0, 0, 0, 2, 0, 0, 0, 6],
             [0, 6, 0, 0, 0, 0, 2, 8, 0],
             [0, 0, 0, 4, 1, 9, 0, 0, 5],
-            [0, 0, 0, 0, 8, 0, 0, 7, 9]
+            [0, 0, 0, 0, 8, 0, 0, 7, 9],
         ]
         solution = [
             [5, 3, 4, 6, 7, 8, 9, 1, 2],
@@ -36,7 +31,7 @@ class TestSudoku(unittest.TestCase):
             [7, 1, 3, 9, 2, 4, 8, 5, 6],
             [9, 6, 1, 5, 3, 7, 2, 8, 4],
             [2, 8, 7, 4, 1, 9, 6, 3, 5],
-            [3, 4, 5, 2, 8, 6, 1, 7, 9]
+            [3, 4, 5, 2, 8, 6, 1, 7, 9],
         ]
         self.boards.append({"puzzle": puzzle, "solution": solution})
 
@@ -66,23 +61,21 @@ class TestSudoku(unittest.TestCase):
         self.boards.append({"puzzle": puzzle, "solution": solution})
 
     def test_example_incomplete(self):
-        """Test case for the example given"""
+        """Testa o exemplo do README.md"""
         self.assertEqual(is_valid(self.boards[0]["puzzle"]), True)
-        self.assertEqual(solve_sudoku(
-            self.boards[0]["puzzle"]), self.boards[0]["solution"])
+        self.assertEqual(
+            solve_sudoku(self.boards[0]["puzzle"]), self.boards[0]["solution"]
+        )
 
     def test_hard_puzzle(self):
-        """Test case for the hard puzzle"""
+        """Testa um tabuleiro difícil"""
         # Hard Puzzle 5,037,319,511 from https://www.websudoku.com/?level=3
         self.assertEqual(is_valid(self.boards[1]["puzzle"]), True)
-        self.assertEqual(solve_sudoku(
-            self.boards[1]["puzzle"]), self.boards[1]["solution"])
+        self.assertEqual(
+            solve_sudoku(self.boards[1]["puzzle"]), self.boards[1]["solution"]
+        )
 
     def test_impossible_boards(self):
-        """Test case for impossible boards"""
+        """Testa alguns tabuleiros impossíveis"""
         board = [[1 for x in range(9)] for y in range(9)]
         self.assertEqual(is_valid(board), False)
-
-
-if __name__ == "__main__":
-    unittest.main()
