@@ -1,7 +1,8 @@
 """Testa o arquivo main.py"""
 
 import unittest  # para criar testes unitários
-from main import is_valid, solve_sudoku, Board
+
+from main import Board, is_valid, solve_sudoku
 
 
 class TestSudoku(unittest.TestCase):
